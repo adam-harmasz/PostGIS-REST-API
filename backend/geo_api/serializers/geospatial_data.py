@@ -1,4 +1,5 @@
 from rest_framework_gis.serializers import GeoFeatureModelSerializer
+from rest_framework import serializers
 
 from geo_api.models import DBPoint, DBLineString, DBPolygon
 
@@ -24,3 +25,7 @@ class PolygonSerializer(GeoFeatureModelSerializer):
         model = DBPolygon
         geo_field = "polygon"
         fields = ("id", "name", "polygon")
+
+
+class LineStringIdsSerializer(serializers.Serializer):
+    lines = serializers.ListField(child=serializers.IntegerField(min_value=1), allow_empty=False)
