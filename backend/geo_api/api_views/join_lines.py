@@ -31,7 +31,6 @@ class JoinLinesAPIView(APIView):
             - 200 OK: Merged LineStrings in GeoJSON format.
             - 400 Bad Request: If input is invalid.
             - 404 Not Found: If no LineStrings are found for provided IDs.
-            - 500 Internal Server Error: If merging fails.
         """
         serializer = self.get_serializer(data=request.data)
 
