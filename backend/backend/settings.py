@@ -28,9 +28,9 @@ DEBUG = os.getenv("DEBUG") == "True"
 ALLOWED_HOSTS = []
 
 
-LOCAL_APPS = []
+LOCAL_APPS = ["geo_api"]
 
-THIRD_PARTY_APPS = ["rest_framework"]
+THIRD_PARTY_APPS = ["rest_framework", "rest_framework_gis"]
 
 DJANGO_APPS = [
     "django.contrib.admin",
