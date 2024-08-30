@@ -1,6 +1,6 @@
 from rest_framework_gis.serializers import GeoFeatureModelSerializer
 
-from geo_api.models import DBPoint, DBLineString
+from geo_api.models import DBPoint, DBLineString, DBPolygon
 
 
 class PointSerializer(GeoFeatureModelSerializer):
@@ -17,3 +17,10 @@ class LineStringSerializer(GeoFeatureModelSerializer):
         model = DBLineString
         geo_field = "line"
         fields = ("id", "name", "line")
+
+
+class PolygonSerializer(GeoFeatureModelSerializer):
+    class Meta:
+        model = DBPolygon
+        geo_field = "polygon"
+        fields = ("id", "name", "polygon")
