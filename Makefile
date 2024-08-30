@@ -22,10 +22,10 @@ web-bash:
 	docker-compose exec web bash
 
 shell:
-	docker-compose exec web bash -c "python manage.py shell_plus --ipython"
+	docker-compose exec web bash -c "python manage.py shell"
 
 format:
 	docker-compose exec web bash -c "black . --line-length 120"
 
-createsuperuser:
-	docker-compose exec web bash -c "python manage.py createsuperuser --noinput"
+test:
+	docker-compose exec web bash -c "python manage.py test"
