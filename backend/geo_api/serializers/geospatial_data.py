@@ -29,3 +29,7 @@ class PolygonSerializer(GeoFeatureModelSerializer):
 
 class LineStringIdsSerializer(serializers.Serializer):
     lines = serializers.ListField(child=serializers.IntegerField(min_value=1), allow_empty=False)
+
+
+class PontIdsSerializer(serializers.Serializer):
+    points = serializers.ListField(child=serializers.IntegerField(min_value=1), allow_empty=False)
