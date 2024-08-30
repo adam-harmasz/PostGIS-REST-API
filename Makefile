@@ -29,3 +29,6 @@ format:
 
 test:
 	docker-compose exec web bash -c "python manage.py test"
+
+run:
+	make build && make dev
