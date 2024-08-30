@@ -61,7 +61,7 @@ class PointAPITests(APITestCase):
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.point.refresh_from_db()
-        self.assertEqual(self.point.location, GEOSPoint(*self.berlin_coordinates, srid=4326))
+        self.assertEqual(self.point.location, GEOSPoint(*self.berlin_coordinates, srid=DEFAULT_SRID))
 
     def test_delete_point(self):
         response = self.client.delete(self.point_url)
