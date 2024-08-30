@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 LOCAL_APPS = ["geo_api"]
 
-THIRD_PARTY_APPS = ["rest_framework", "rest_framework_gis"]
+THIRD_PARTY_APPS = ["rest_framework", "rest_framework_gis", "drf_yasg"]
 
 DJANGO_APPS = [
     "django.contrib.admin",
