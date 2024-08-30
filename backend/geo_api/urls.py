@@ -8,8 +8,8 @@ from geo_api.api_views.geospatial_data import (
     PolygonListCreateAPIView,
     PolygonRetrieveUpdateDestroyAPIView,
     PolygonIntersectionApiView,
+    JoinLinesAPIView,
 )
-from geo_api.api_views.join_lines import JoinLinesAPIView
 
 urlpatterns = [
     path("points/", PointListCreateAPIView.as_view(), name="point-list-create"),

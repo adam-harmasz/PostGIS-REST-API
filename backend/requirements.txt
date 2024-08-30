@@ -4,3 +4,4 @@ djangorestframework-gis==1.1
 psycopg2-binary==2.9.9
 black==24.8
 ipython==8.27.0
+drf-yasg==1.21.7
