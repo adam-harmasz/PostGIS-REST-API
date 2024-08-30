@@ -15,4 +15,12 @@ class DBLineString(models.Model):
     line = models.LineStringField()
 
     def __str__(self):
-        return self.name
+        return self.name or f"LineString: {self.line}"
+
+
+class DBPolygon(models.Model):
+    name = models.CharField(max_length=50, null=True, blank=True)
+    polygon = models.PolygonField()
+
+    def __str__(self):
+        return self.name or f"Polygon: {self.polygon}"
