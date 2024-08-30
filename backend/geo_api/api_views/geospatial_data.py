@@ -5,8 +5,12 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from geo_api.models import DBPoint, DBLineString, DBPolygon
-from geo_api.serializers.geospatial_data import PointSerializer, LineStringSerializer, PolygonSerializer, \
-    PontIdsSerializer
+from geo_api.serializers.geospatial_data import (
+    PointSerializer,
+    LineStringSerializer,
+    PolygonSerializer,
+    PontIdsSerializer,
+)
 
 
 class PointListCreateAPIView(generics.ListCreateAPIView):
@@ -46,6 +50,7 @@ class PolygonIntersectionApiView(APIView):
     This view allows users to check which points intersect with a given polygon
     by providing a list of point IDs in a POST request.
     """
+
     allowed_methods = ["post"]
 
     def post(self, request, pk, format="json"):
@@ -73,7 +78,6 @@ class PolygonIntersectionApiView(APIView):
             serializer = PointSerializer(intersecting_points, many=True)
 
             return Response(serializer.data, status=status.HTTP_200_OK)
-
 
     def get_serializer(self, *args, **kwargs):
         return PontIdsSerializer(*args, **kwargs)
